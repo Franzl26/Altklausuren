@@ -20,7 +20,7 @@ public class Calculation extends Thread {
     }
 
     private synchronized void testValue() {
-        long tmpValueAbs = 0;
+        long tmpValueAbs;
         synchronized (lock) {
             tmpValueAbs = value++;
         }
