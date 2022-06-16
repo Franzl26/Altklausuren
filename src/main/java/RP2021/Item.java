@@ -51,8 +51,7 @@ public class Item implements Orderable<Integer> {
             }
         }
         System.out.println(Thread.currentThread().getName() + ": handleOrder() -> " + orders.getFirst());
-        Integer i = orders.dequeue();
-        return i;
+        return orders.dequeue();
     }
 
     // Aufgabe 8b
