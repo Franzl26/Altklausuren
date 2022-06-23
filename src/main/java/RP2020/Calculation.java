@@ -19,9 +19,9 @@ public class Calculation extends Thread {
         }
     }
 
-    private synchronized void testValue() {
+    private void testValue() {
         long tmpValueAbs;
-        synchronized (lock) {
+        synchronized (this) {
             tmpValueAbs = value++;
         }
         if (tmpValueAbs > END_VALUE) {
@@ -48,7 +48,9 @@ public class Calculation extends Thread {
 
         if (countDividerOfValue == 2 && countDividerOfMirroredValue == 2) {
             System.out.println(getName() + ": " + tmpValueAbs + " ist Mirpzahl");
-            countEmirp++;
+            synchronized (lock) {
+                countEmirp++;
+            }
         }
     }
 
