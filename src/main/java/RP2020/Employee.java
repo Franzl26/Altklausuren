@@ -61,7 +61,10 @@ public class Employee extends Unit {
 
     @Override
     public boolean equals(Object o) {
-        return this.id.equals(((Employee)o).id);
+        if (o instanceof Employee employee) {
+            return this.id.equals(employee.id);
+        }
+        return false;
     }
 
     @Override

@@ -66,7 +66,7 @@ public class MailSubscriber implements Subscribable<Mail>, Comparable<MailSubscr
     }
 
     public int hashCode() {
-        return Objects.hashCode(eMail);
+        return Objects.hash(eMail);
     }
 
     public int compareTo(MailSubscriber o) {
